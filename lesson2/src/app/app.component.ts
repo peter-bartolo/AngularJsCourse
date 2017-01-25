@@ -1,4 +1,5 @@
 import {Component, ViewEncapsulation} from '@angular/core';
+import {User} from "./models/user";
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,18 @@ import {Component, ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-  title = 'app works!';
+  user : User;
+
+  constructor()
+  {
+    this.user = new User("Peter", "");
+  }
+
+  childWasIncremented(value: number) {
+    console.log('child was incremented!' + value );
+  }
+
+  childWasDecremented(value: number) {
+    console.log('child was decremented!' + value );
+  }
 }

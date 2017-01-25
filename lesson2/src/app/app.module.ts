@@ -9,6 +9,9 @@ import { MainLayoutComponentComponent } from './main-layout-component/main-layou
 import { FooterComponentComponent } from './footer-component/footer-component.component';
 import { NavigationComponentComponent } from './navigation-component/navigation-component.component';
 import { ContentComponentComponent } from './content-component/content-component.component';
+import { BlogPostComponent } from './blog-post/blog-post.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { CounterComponent } from './counter/counter.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { ContentComponentComponent } from './content-component/content-component
     MainLayoutComponentComponent,
     FooterComponentComponent,
     NavigationComponentComponent,
-    ContentComponentComponent
+    ContentComponentComponent,
+    BlogPostComponent,
+    WelcomeComponent,
+    CounterComponent
   ],
   imports: [
     BrowserModule,
