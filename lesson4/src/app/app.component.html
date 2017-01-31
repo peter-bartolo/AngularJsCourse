@@ -1,0 +1,14 @@
+<h2 *ngIf="toggle">
+  Hello from angular
+</h2>
+
+<button (click)="toggle = !toggle">Toggle</button>
+
+<ul>
+  <li *ngFor="let name of names let i = index">{{i}} {{name}}</li>
+</ul>
+
+<ul>
+  <li *ngFor="let t of tasks" [class.strikethrough]="t.complete">{{t.task_name}}</li>
+  <!--<li *ngFor="let t of tasks" [ngClass]="{'strikethrough' : t.complete}">{{t.task_name}}</li>-->
+</ul>
