@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {task} from "./task";
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   private toggle : boolean = false;
   private names : string[] = ['Peter', 'Martin', 'David']
+  private taskName : string;
   private tasks: task[] =
     [
       {
@@ -27,4 +29,9 @@ export class AppComponent {
         "complete": true
       }
     ]
+
+  onAddTask(taskName : string)
+  {
+    this.tasks.push({"task_name": taskName, "complete": false})
+  }
 }

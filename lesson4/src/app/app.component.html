@@ -1,4 +1,4 @@
-<h2 *ngIf="toggle">
+<!--<h2 *ngIf="toggle">
   Hello from angular
 </h2>
 
@@ -6,9 +6,19 @@
 
 <ul>
   <li *ngFor="let name of names let i = index">{{i}} {{name}}</li>
-</ul>
+</ul>-->
 
-<ul>
+<!--<ul>
   <li *ngFor="let t of tasks" [class.strikethrough]="t.complete">{{t.task_name}}</li>
-  <!--<li *ngFor="let t of tasks" [ngClass]="{'strikethrough' : t.complete}">{{t.task_name}}</li>-->
-</ul>
+  <li *ngFor="let t of tasks" [ngClass]="{'strikethrough' : t.complete}">{{t.task_name}}</li>
+</ul>-->
+
+<div class="container" appHighlight color="blue">
+  <input type="text" [(ngModel)]="taskName" />
+  <button type="button" (click)="onAddTask(taskName)">Add</button>
+  <ul class="list-unstyled">
+    <li *ngFor="let t of tasks">
+      <input type="checkbox" [(ngModel)]="t.complete" /><span [class.strikethrough]="t.complete">{{t.task_name}}</span><br/>
+    </li>
+  </ul>
+</div>
