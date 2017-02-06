@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {task} from "./task";
+import {ChatService} from "./Chat-Service";
 
 @Component({
   selector: 'app-root',
@@ -29,6 +30,10 @@ export class AppComponent {
         "complete": true
       }
     ]
+
+  constructor (chatService : ChatService) {
+    chatService.doSomeThing();
+  }
 
   onAddTask(taskName : string)
   {

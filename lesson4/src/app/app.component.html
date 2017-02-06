@@ -13,6 +13,7 @@
   <li *ngFor="let t of tasks" [ngClass]="{'strikethrough' : t.complete}">{{t.task_name}}</li>
 </ul>-->
 
+<!--
 <div class="container" appHighlight color="blue">
   <input type="text" [(ngModel)]="taskName" />
   <button type="button" (click)="onAddTask(taskName)">Add</button>
@@ -22,3 +23,10 @@
     </li>
   </ul>
 </div>
+-->
+
+<app-cookie-dispenser></app-cookie-dispenser>
+<br>
+<app-cookie-factory></app-cookie-factory>
+<br>
+<app-cookie-info></app-cookie-info>
