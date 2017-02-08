@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CookieService} from "../Cookie-Service";
+import {Http} from "@angular/http";
 
 @Component({
   selector: 'app-cookie-dispenser',
@@ -8,7 +9,7 @@ import {CookieService} from "../Cookie-Service";
 })
 export class CookieDispenserComponent implements OnInit {
 
-  constructor(private cookieService : CookieService) { }
+  constructor(private cookieService : CookieService, private httpService : Http) { }
 
   ngOnInit() {
   }

@@ -11,11 +11,14 @@ export class CookieInfoComponent implements OnInit {
 
   private cookies : Cookie[];
 
-  constructor(cookieService : CookieService) {
-    this.cookies = cookieService.getCookies();
+  constructor(private cookieService : CookieService) {
+    this.cookies = this.cookieService.getCookies();
   }
 
   ngOnInit() {
   }
 
+  refreshCookies() {
+    this.cookies = this.cookieService.getCookies();
+  }
 }

@@ -1,5 +1,12 @@
 <ul class="list-unstyled">
   <li *ngFor="let c of cookies">
-    <span>{{c.getCookieTypeAsString()}}  {{c.cookieTimeInMilliSeconds}}  {{c.cookieShape}}</span>
+    <!--<span ngContent="c.getCookieTypeAsString()"></span>-->
+    <!--<span>{{c.getCookieTypeAsString()}}</span>-->
+    <span>{{c.cookieType}}</span>
+    <span>{{c.cookieSizeInMillimetres}}</span>
+    <span>{{c.cookieShape}}</span>
+    <!--<span>{{c.getCookieShapeAsString()}}</span>-->
+    <!--<span ng="c.getCookieShapeAsString()"></span>-->
   </li>
 </ul>
+<button (click)="refreshCookies()">Refresh</button>

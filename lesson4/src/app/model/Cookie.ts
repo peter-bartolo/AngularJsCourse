@@ -15,10 +15,9 @@ export enum CookieShape {
 }
 
 export class Cookie {
-  constructor(private cookieType: CookieType, private cookieTimeInMilliSeconds: number, private cookieShape: CookieShape) {}
+  constructor(private cookieType: CookieType, private cookieSizeInMillimetres: number, private cookieShape: CookieShape) {}
 
-  getCookieTypeAsString()
-  {
+  getCookieTypeAsString() {
     switch(this.cookieType)
     {
       case CookieType.Chocolate :
@@ -27,6 +26,18 @@ export class Cookie {
         return "Chocolate-Chip";
       case CookieType.PeanutButter :
         return "Peanut-Butter";
+    }
+  }
+
+  getCookieShapeAsString() {
+    switch(this.cookieShape)
+    {
+      case CookieShape.Round:
+        return "Round";
+      case CookieShape.Square :
+        return "Square";
+      case CookieShape.Abstract :
+        return "Abstract";
     }
   }
 }
