@@ -1,0 +1,22 @@
+<ul>
+  <li>{{nameObservable}}</li>
+  <li>{{nameObservable | async}}</li>
+  <li>{{pi | number:'1.2-2'}}</li>
+  <li>{{pi | currency:'EUR':'1.2-2'}}</li>
+  <li>{{student}}</li>
+  <li>{{student | json}}</li>
+  <li>{{'Julian Sammut' | uppercase}}</li>
+  <li>{{'Julian Sammut' | slice:0:6 | uppercase}}</li>
+  <li>{{todaysDate}}</li>
+  <li>{{todaysDate | date:'fullDate'}}</li>
+  <li>{{123456 | trim}}</li>
+  <li>{{' abcdefg '}}</li>
+  <li>{{10}}</li>
+  <li>{{10 | double}}</li>
+</ul>
+<ul>
+  <li *ngFor="let s of students | filterbyid:1">
+    {{s.name}}
+  </li>
+</ul>
+

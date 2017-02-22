@@ -1,0 +1,4 @@
+<input type="text" (keypress)="searchWikipedia()" [(ngModel)]="searchString"/>
+<ul>
+  <li *ngFor="let item of results">{{item}}</li>
+</ul>
