@@ -1,0 +1,38 @@
+<!--<form #patientForm="ngForm"
+      (ngSubmit)="onSubmit(patientForm.form)">
+  <input type="text" name="patientName" [(ngModel)]="model.patientName" />
+  <button type="submit">Submit</button>
+</form>-->
+
+<div class="container">
+  <form #registrationForm="ngForm">
+    <div class="form-group col-xs-4 col-xs-offset-4 has-danger">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" class="form-control form-control-danger" #nameRef="ngModel" ngModel required minlength="4" pattern="[a-z]+"/>
+      <span *ngIf="nameRef.errors?.required && nameRef.touched" class="form-text alert-danger">Please Enter Your Name</span>
+    </div>
+
+    <div class="form-group col-xs-4 col-xs-offset-4">
+      <label for="surname">Surname</label>
+      <input type="text" name="surname" id="surname" class="form-control" ngModel required minlength="4" pattern="[a-z]+"/>
+    </div>
+
+    <div class="form-group col-xs-4 col-xs-offset-4">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" class="form-control" ngModel required />
+    </div>
+
+    <div class="form-group col-xs-4 col-xs-offset-4">
+      <label for="gender">Gender</label>
+      <select id="gender" name="gender" class="form-control" ngModel required >
+        <option *ngFor="let genderType of genderTypes" [value]="genderType">{{genderType}}</option>
+      </select>
+    </div>
+
+    <div class="form-group col-xs-4 col-xs-offset-4">
+      <button type="submit" class="btn btn-primary" [disabled]="registrationForm.form.invalid">Submit</button>
+    </div>
+
+  </form>
+
+</div>
