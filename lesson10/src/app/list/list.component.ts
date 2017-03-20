@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Http} from "@angular/http";
 import 'rxjs/add/operator/map'
+import {Router} from "@angular/router";
+import {ListService} from "../list.service";
 
 
 @Component({
@@ -10,18 +12,29 @@ import 'rxjs/add/operator/map'
 })
 export class ListComponent implements OnInit {
 
+  item : Object;
   items : Array<Object> = [];
 
-  constructor(private http: Http) {
+  constructor(private router: Router, private listService : ListService) {
   }
 
   ngOnInit() {
-    this.getAllItems().subscribe( (itemsRemote : Array<Object>) => {
+    this.getAllItems();
+  }
+
+  public getAllItems() {
+    this.listService.getItems().subscribe((itemsRemote : Array<Object>) => {
       this.items = itemsRemote
     });
   }
 
-  public getAllItems() {
-    return this.http.get('/items').map((r) => r.json());
+  public postItems() {
+    this.listService.postItems().subscribe(
+      () => {
+        this.items.push({name: this.item});
+      },
+      () => {
+        this.router.navigate(['/error']);
+      });
   }
 }

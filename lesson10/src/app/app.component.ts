@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {MockBackend, MockConnection} from "@angular/http/testing";
-import {Response, RequestMethod} from "@angular/http";
+import {Response, RequestMethod, ResponseOptions} from "@angular/http";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -26,8 +27,22 @@ export class AppComponent {
 
       if(connection.request.method === RequestMethod.Post)
       {
-        connection.mockRespond(new Response(<any>{}));
+        Observable.of(new Error('404 Not Found'))
+          .delay(this.generateRandomNumberOfMilliSeconds(1500))
+          .subscribe( (error) => {
+            connection.mockError(error);
+          }
+        );
+        // Observable.of(new Response(<any>{}))
+        //   .delay(this.generateRandomNumberOfMilliSeconds(1500)).subscribe( (response) => {
+        //     connection.mockRespond(response);
+        //   }
+        // );
       }
     });
+  }
+
+  public generateRandomNumberOfMilliSeconds(max: number) {
+    return Math.random() * max;
   }
 }

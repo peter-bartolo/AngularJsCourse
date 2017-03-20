@@ -1,3 +1,5 @@
 <ul>
-  <li *ngFor="let item of items">{{item.name}}</li>
+  <li *ngFor="let item of items">{{item?.name}}</li>
 </ul>
+<input type="text" name="item" [(ngModel)]="item" />
+<button (click)="postItems()">Post an item</button>
