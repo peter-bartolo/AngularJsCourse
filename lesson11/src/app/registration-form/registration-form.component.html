@@ -1,0 +1,27 @@
+<form [formGroup]="myGroup" (ngSubmit)="submitForm()">
+  <div class="col-md-5 col-md-offset-2">
+    <div class="row">
+      <label for="name">Name</label>
+      <input id="name" class="form-control" type="text" formControlName="name">
+    </div>
+    <div class="row">
+      <label for="surname">Surname</label>
+      <input id="surname" class="form-control" type="text" formControlName="surname">
+    </div>
+    <div class="row">
+      <label for="password">Password</label>
+      <input id="password" class="form-control" type="password" formControlName="password">
+    </div>
+    <div class="row">
+      <label for="firstNumber">First Number</label>
+      <input id="firstNumber" class="form-control" type="text" formControlName="firstNumber">
+    </div>
+    <div class="row">
+      <label for="result">Result</label>
+      <input id="result" class="form-control" type="text" formControlName="result">
+    </div>
+    <div class="row">
+      <button type="submit">Submit</button>
+    </div>
+  </div>
+</form>
